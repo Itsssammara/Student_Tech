@@ -36,7 +36,7 @@ export default {
   justify-content: center;
   height: 100vh;
   background-color: #0f1aaf;
-  background-image: url('https://i.ibb.co/DKkMz21/bg-gif.gif');
+  background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpg');
   background-size: cover;
   background-position: center;
 }

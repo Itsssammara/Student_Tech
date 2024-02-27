@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="products">
     <h1>OUR PRODUCTS</h1>
     <div v-for="product in products" :key="product.id" class="product">
         <router-link :to="{name: 'ProdDetails',params:{id:product.id}}">
@@ -25,6 +25,16 @@ export default {
 </script>
 
 <style scoped>
+.products{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #0f1aaf;
+  background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 .product h2{
   background: rgb(65, 65, 158);

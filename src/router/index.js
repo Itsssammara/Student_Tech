@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import About from '../views/AboutView.vue'
 import Products from '../views/products/ProductsView.vue'
 import ProdDetails from '../views/products/ProdDetailsView.vue'
+import Admin from '../views/AdminView.vue'
+import Contact from '../views/ContactView.vue'
 
 const routes = [
   {
@@ -25,7 +27,17 @@ const routes = [
     name: 'ProdDetails',
     component: ProdDetails,
     props: true
-  }
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
 ]
 
 const router = createRouter({

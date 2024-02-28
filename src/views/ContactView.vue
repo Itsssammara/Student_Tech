@@ -17,7 +17,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #0f1aaf;
   background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpgf');
   background-size: cover;
   background-position: center;

@@ -1,52 +1,125 @@
 <template>
-    <div class="admin">
-        <h1>Admin page</h1>
-        <table>
-        <tr>
-          <th>Product ID</th>
-          <th>Product Name</th>
-          <th>Image</th>
-          <th>Price</th>
-          <th></th>
-        </tr>
-        <tbody admin-table>
+  <div class="container">
+      <div class="row">
+          <h2 class="display-4">User CRUD</h2>
+      </div>
+      <div class="row">
+          <div class="col">
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="">Add </button>
+          </div>
+      </div>
+      <div class="row">
+          <table>
+              <thead>
+                  <tr>
+                      <th>User ID</th>
+                      <th>First name</th>
+                      <th>Last name</th>
+                      <th>User age</th>
+                      <th>Gender</th>
+                      <th>Email address</th>
+                      <th>User role</th>
+                      <th>
+                          Action
+                      </th>
+                  </tr>
+              </thead>
+              <tbody v-if="users">
+                  <tr v-for="user in users" :key="user.userID">
+                      <td>
+                          {{ user.userID }}
+                      </td>
+                      <td>
+                          {{ user.firstName }}
+                      </td>
+                      <td>
+                          {{ user.lastName }}
+                      </td>
+                      <td>
+                          {{ user.userAge }}
+                      </td>
+                      <td>
+                          {{ user.gender }}
+                      </td>
+                      <td>
+                          {{ user.emailAdd }}
+                      </td>
+                      <td>
+                          {{ user.userRole }}
+                      </td>
+                      <td class="d-flex justify-content-between">
+                          <button class="btn btn-success">Edit</button>
+                          <button class="btn btn-success">Delete</button>
 
-        </tbody>
-        <tr>
-          <td>
-            <input type="text" placeholder="Number ID" id="idNew">
-          </td>
-          <td>
-            <input type="text" placeholder="Item Name" id="newName">
-          </td>
-          <td>
-            <input type="text" placeholder="Insert Item" id="newPic">
-          </td>
-          <td>
-            <input type="text" placeholder="Insert Price" id="newCost">
-          </td>
-          <td><button id="addButton">Add</button></td>
-          <td><button id="delButton">Delete</button></td>
-        </tr>
-      </table>
-    </div>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="row">
+          <h2 class="display-4">Product CRUD</h2>
+      </div>
+      <div class="row">
+          <div class="col">
+              <button class="btn btn-success">Add </button>
+          </div>
+      </div>
+      <div class="row">
+          <table>
+              <thead>
+                  <tr>
+                      <th>Product ID</th>
+                      <th>Product Name</th>
+                      <th>Product Quantity</th>
+                      <th>Product Amount</th>
+                      <th>
+                          Action
+                      </th>
+                  </tr>
+              </thead>
+              <tbody v-if="products">
+                  <tr v-for="product in products" :key="product.prodID">
+                      <td>
+                          {{ product.prodID }}
+                      </td>
+                      <td>
+                          {{ product.prodName }}
+                      </td>
+                      <td>
+                          {{ product.prodQuantity }}
+                      </td>
+                      <td>
+                          R {{ product.prodAmount }}
+                      </td>
+                      <td class="d-flex justify-content-between">
+                          <button class="btn btn-success">Edit</button>
+                          <button class="btn btn-success">Delete</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
 </template>
 
-<style scoped>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+<script>
+  export default {
+      computed:{
+          users() {
+              return this.$store.state.users
+          },
+          products() {
+              return this.$store.state.products
+          }
+      },
+      mounted() {
+          this.$store.dispatch('fetchUsers')
+          this.$store.dispatch('fetchProducts')
 
-.admin {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #0f1aaf;
-  background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpg');
-  background-size: cover;
-  background-position: center;
-}
+      }
+  }
+</script>
+
+<style lang="scss" scoped>
+
 </style>

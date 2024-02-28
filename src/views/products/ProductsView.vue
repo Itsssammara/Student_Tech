@@ -1,53 +1,53 @@
 <template>
-  <div class="products">
-    <h1>OUR PRODUCTS</h1>
-    <div v-for="product in products" :key="product.id" class="product">
-        <router-link :to="{name: 'ProdDetails',params:{id:product.id}}">
-          <h2>{{ product.title }}</h2>
-        </router-link>
-        
-    </div>
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <input type="text" placeholder="Search product by name" class="form-control">
+          </div>
+          <div class="col">
+              <button class="btn btn-success">Sorting by price</button>
+          </div>
+      </div>
+      <div class="row" v-if="products">
+          <Card v-for="product in products" :key="product.prodID">
+              <template #cardHeader>
+                  <h4 class="card-title">{{ product.prodName }}</h4>
+              </template>
+              <template #cardBody>
+                  <p class="card-text text-dark bg-gradient bg-dark-subtle p-2">
+                      Quantity: {{ product.prodQuantity }}
+                  </p>
+                  <p class="card-text text-dark bg-gradient bg-dark-subtle p-2">
+                      Amount: R{{ product.prodAmount }}
+                  </p>
+                  <router-link :to="{name: 'product', params: {id: product.prodID}}">View More</router-link>
+              </template>
+          </Card>
+      </div>
+      <div class="row" v-else>
+          <p class="lead">Loading</p>
+      </div>
   </div>
 </template>
 
 <script>
+import Card from '@/components/Card.vue';
 export default {
-    data(){
-       return {
-        products:[
-           {title:'Lenovo',id:1, description:'info'},
-           {title:'Lenovo',id:2, description:'info'},
-           {title:'Lenovo',id:3, description:'info'},
-        ]
-       }
-    }
+  name: 'ProductsView',
+  components: {
+      Card
+  },
+  computed:{
+      products(){
+          return this.$store.state.products
+      }
+  },
+  mounted() {
+      this.$store.dispatch('fetchProducts')
+  }
 }
 </script>
 
 <style scoped>
-.products{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  background-color: #0f1aaf;
-  background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpg');
-  background-size: cover;
-  background-position: center;
-}
 
-.product h2{
-  background: rgb(65, 65, 158);
-  padding: 20px;
-  border-radius: 10px;
-  margin: 10px auto;
-  max-width: 600px;
-  cursor: #53a4e6;
-}
-.product h2:hover{
-  background: #d4e0eb;
-}
-.product a{
-  text-decoration: none;
-}
 </style>

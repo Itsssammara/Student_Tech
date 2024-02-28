@@ -2,7 +2,6 @@
 
 <navigation/>
 
-
 </template>
 
 <script>

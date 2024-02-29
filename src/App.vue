@@ -1,19 +1,20 @@
 <template>
 
 <navigation/>
-
+<spinner></spinner>
+<footerComp />
 </template>
 
 <script>
 import navigation from '@/components/navigation.vue'
-import footers from '@/components/footer.vue'
+import footerComp from './components/footerComp.vue'
 import spinner from '@/components/spinner.vue'
 
 export default {
   
   components: {
    navigation,
-   footers,
+   footerComp,
    spinner
   }
 }

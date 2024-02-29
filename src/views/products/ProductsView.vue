@@ -1,53 +1,61 @@
 <template>
-  <div class="container">
-      <div class="row">
-          <div class="col">
-              <input type="text" placeholder="Search product by name" class="form-control">
-          </div>
-          <div class="col">
-              <button class="btn btn-success">Sorting by price</button>
-          </div>
+    <div class="products">
+      <img src="https://i.postimg.cc/YC456R29/bg-image.jpg" height="25%" width="100%">
+      <h1>OUR PRODUCTS</h1>
+      <div class="product-grid">
+        <div v-for="product in products" :key="product.id" class="product">
+          <router-link :to="{name: 'ProdDetails',params:{id:product.id}}">
+            <img :src="product.img" alt="Product Image">
+            <!-- <h2>{{ product.title }}</h2> -->
+          </router-link>
+        </div>
       </div>
-      <div class="row" v-if="products">
-          <Card v-for="product in products" :key="product.prodID">
-              <template #cardHeader>
-                  <h4 class="card-title">{{ product.prodName }}</h4>
-              </template>
-              <template #cardBody>
-                  <p class="card-text text-dark bg-gradient bg-dark-subtle p-2">
-                      Quantity: {{ product.prodQuantity }}
-                  </p>
-                  <p class="card-text text-dark bg-gradient bg-dark-subtle p-2">
-                      Amount: R{{ product.prodAmount }}
-                  </p>
-                  <router-link :to="{name: 'product', params: {id: product.prodID}}">View More</router-link>
-              </template>
-          </Card>
-      </div>
-      <div class="row" v-else>
-          <p class="lead">Loading</p>
-      </div>
-  </div>
-</template>
+    </div>
+  </template>
 
 <script>
-import Card from '@/components/Card.vue';
 export default {
-  name: 'ProductsView',
-  components: {
-      Card
-  },
-  computed:{
-      products(){
-          return this.$store.state.products
-      }
-  },
-  mounted() {
-      this.$store.dispatch('fetchProducts')
-  }
-}
+} 
 </script>
 
 <style scoped>
+.products{
+  display: row;
+  flex-direction: column;
+  align-items: center;
+  height: 250vh;
+  background-color: #6b72d8;
+  /* background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpg'); */
+  background-size: cover;
+  background-position: center;
+}
+.products h1{
+    color: rgb(15, 25, 82);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
+.product h2{
+  background: rgb(65, 65, 158);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px auto;
+  max-width: 600px;
+  cursor: #53a4e6;
+}
+.product h2:hover{
+  background: #d4e0eb;
+}
+.product a{
+  text-decoration: none;
+}
+.product.img{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr 1fr 1fr 1fr));
+  grid-gap: 154px;
+  margin-top: 60px;
+}
 </style>

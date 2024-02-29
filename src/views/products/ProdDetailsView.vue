@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-      <div class="row">
-          <h2 class="display-2">Product Details</h2>
-      </div>
+    <h1>prod details</h1>
       <div class="row">
           <Card v-if="product">
               <template #cardHeader>
@@ -39,5 +37,17 @@ import Card from '@/components/Card.vue';
 </script>
 
 <style scoped>
+*{
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container h2{
+    color: rgb(15, 25, 82);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+}
+
 
 </style>

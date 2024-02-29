@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="row">
-          <h2 class="display-4">User CRUD</h2>
+          <h2 class="display-4">Users</h2>
       </div>
       <div class="row">
           <div class="col">
@@ -57,7 +57,7 @@
           </table>
       </div>
       <div class="row">
-          <h2 class="display-4">Product CRUD</h2>
+          <h2 class="display-4">Products</h2>
       </div>
       <div class="row">
           <div class="col">

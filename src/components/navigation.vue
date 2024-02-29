@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+    <nav class="navbar navbar-expand-lg navbar- bg- justify-content-center">
       <router-link :to="{name:'home'}" class="navbar-brand">
         <img src="https://cdn-thumbs.imagevenue.com/a7/7d/5a/ME17OCJC_t.png" alt="Logo" class="logo-img">
       </router-link>
@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #343a40; /* Dark color for the navbar background */
+  background-color: #75256d; /* Dark color for the navbar background */
   padding: 0.5rem 1rem; /* Add padding to the navbar */
 }
 .navbar-brand {

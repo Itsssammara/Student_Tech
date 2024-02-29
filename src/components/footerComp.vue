@@ -8,20 +8,20 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "footerComp"
 }
 </script>
 
 <style scoped>
 .footer {
-  background-color: #333;
+  background-color: #75256d;
   color: #fff;
   text-align: center;
   padding: 10px;
-  display: inline;
+  /* display: inline; */
+  width: 100%;
 }
 .container {
-  max-width: 1200px;
   margin: 0 auto;
 }
 </style>

@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #75256d; /* Dark color for the navbar background */
+  background-color: #a33d99; /* Dark color for the navbar background */
   padding: 0.5rem 1rem; /* Add padding to the navbar */
 }
 .navbar-brand {
@@ -39,19 +39,19 @@ export default {
 }
 
 .nav-link:hover {
-  background-color: #5e9cfb; /* Light blue color on hover */
+  background-color: transparent; /* Light blue color on hover */
 }
 
 .router-link-exact-active {
-  background-color: #5e9cfb; /* Light blue color for the active link */
+  background-color: #eaeff8; /* Light blue color for the active link */
 }
 
 .router-link-exact-active:hover {
-  background-color: #5e9cfb; /* Keep the same color on hover for the active link */
+  background-color: #ffffff; /* Keep the same color on hover for the active link */
 }
 
 .router-link-exact-active .nav-link {
-  color: #ffffff; /* White color for the active link text */
+  color: #000000; /* White color for the active link text */
 }
 
 .logo-img {

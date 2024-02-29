@@ -41,6 +41,7 @@ export default {
 }
 .animated-heading {
   color: #000;
+  font-weight: 700;
   font-size: 2.5rem;
   color: antiquewhite;
   text-align: left;

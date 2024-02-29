@@ -1,24 +1,25 @@
 <template>
   <div class="contact">
-    <h1>CONTACT US</h1>
+    <br><br><h1>Reach Out To Us!</h1>
+      <p>If you have any questions or inquiries, 
+        please feel free to contact us using the form below:</p>
     <div class="contact-details">
       <div><br>
-        <h2>Contact Details</h2>
         <p><i class="bi bi-envelope"></i>student_tech@gmail.com</p>
         <p><i class="bi bi-telephone"></i>082 524 8576</p>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/ammara-hoosen-364913288" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/Itsssammara" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="https://www.instagram.com/marie_paints_?utm_source=qr&igsh=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
         </div><br>
-        <img src="" alt="map">
+        
       </div>
     </div>
     <section class="container" id="Contact">
       <div class="row my-5 justify-content-center">
         <h1 class="display"></h1>
         <div class="login-box">
-          <form>
+          <form action ="https://formspree.io/f/xkndbkee" target="_blank">
             <div class="user-box">
               <input type="text" name=" required">
               <label>Fullname</label>
@@ -44,12 +45,17 @@
     </section>
   </div>
 </template>
+<script>
 
+</script>
 <style scoped>
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+h1{
+  font-weight: 700;
 }
 
 .contact {
@@ -57,8 +63,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 150vh;
-  background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpgf');
+  height: 100vh;
+  background-image: url('https://i.postimg.cc/L586qPH6/th.jpg');
   background-size: cover;
   background-position: center;
 }

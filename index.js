@@ -44,10 +44,7 @@ app.use(
         extended: true,
     }),
     cookieParser(),
-    cors({
-        origin: 'https://your-trusted-frontend-domain.com',
-        credentials: true,
-    })
+    cors()
 );
 
 

@@ -1,6 +1,6 @@
 <template>
-    <div v-if="products">
-    <table class="table" v-if="products">
+    <div v-if="product">
+    <table class="table" v-if="product">
   <thead>
     <tr>
       <th scope="col">Image</th>
@@ -34,6 +34,7 @@
         },
           mounted(){
         this.$store.dispatch("fetchProducts");
+        
     }
 };
 

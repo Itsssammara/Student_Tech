@@ -2,8 +2,9 @@
   <div class="container">
     <h1>prod details</h1>
       <div class="row">
-          <Card v-if="product">
-              <template #cardHeader>
+        <!-- {{ product }} -->
+          <Card v-if="product" :key="product">
+              <!-- <template #cardHeader>
                   <h4 class="card-title">{{ product.prodName }}</h4>
               </template>
               <template #cardBody>
@@ -13,7 +14,7 @@
                   <p class="card-text text-dark bg-gradient bg-dark-subtle p-2">
                       Amount: R{{ product.prodAmount }}
                   </p>
-              </template>
+              </template> -->
           </Card>
       </div>
   </div>
@@ -27,12 +28,16 @@ import Card from '@/components/Card.vue';
       },
       computed: {
           product() {
-              return this.$store.state.product
+              return this.$store.state.product;
           }
       },
       mounted() {
-          this.$store.dispatch('fetchProduct', this.$route.params)
+          let prodID = +this.$route.path.split('/').at(-1);
+          this.$store.dispatch('fetchProduct', prodID);
+        //   this.$store.dispatch('fetchProduct')
+
       }
+      
   }
 </script>
 

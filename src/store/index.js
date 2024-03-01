@@ -5,7 +5,8 @@ import { useCookies } from 'vue3-cookies'
 const {cookies} = useCookies()
 import router from '@/router'
 // import AuthenticateUser from '@/service/AuthenticateUser'
-const baseURL = ''
+const baseURL = 'https://student-tech-3.onrender.com'
+
 export default createStore({
   state: {
     users: null,
@@ -169,7 +170,7 @@ export default createStore({
     async fetchProducts(context) {
       try{
         let {results} =
-        (await axios.get(`${baseURL}products`)).data
+        (await axios.get(`${baseURL}/products`)).data
         if(results) {
           context.commit('setProducts', results)
         }
@@ -184,7 +185,7 @@ export default createStore({
     },
     async fetchProduct(context, payload) {
       try{
-        let {result} = (await axios.get(`${baseURL}products/${payload.id}`)).data
+        let {result} = (await axios.get(`${baseURL}/products/${payload.id}`)).data
         if(result) {
           context.commit('setProduct', result)
         }else {

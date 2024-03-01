@@ -10,7 +10,7 @@
     <div class="row">
             <div class="column">
                 <div class="card">
-                    <center><img src="https://i.postimg.cc/xd10VM9V/bgimg.jpg"></center>
+                    <center><img src="https://i.postimg.cc/nzzP45Jh/img1-1.png"></center>
                     <p class="staff">Jay-donn Hendricks <br>
                       Backend Developer<br><br></p>
                     <div class="container">
@@ -21,7 +21,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <center><img src="https://i.postimg.cc/xd10VM9V/bgimg.jpg"></center>
+                    <center><img src="https://i.postimg.cc/YSS5RjN7/img2.jpg"></center>
                     <p class="staff">Ammara Hoosen<br>
                       Designer/Developer<br><br></p>
                     <div class="container">

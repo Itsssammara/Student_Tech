@@ -7,12 +7,22 @@
         <option value="cheapest">Cheapest first</option>
         <option value="expensive">Most expensive first</option>
     </select>
-      <div class="product-grid">
-        <div v-for="product in products" :key="product.id" class="product">
-          <router-link :to="{name: 'ProdDetails',params:{id:product.id}}">
-            <img :src="product.img" alt="Product Image">
-            <!-- <h2>{{ product.title }}</h2> -->
-          </router-link>
+      <div class="product " v-if="products">
+        <!-- {{products}} -->
+        <div v-for="product in products" :key="product" class="product">
+          <div class="card container-fluid d-flex justify-content align-items-center" v-for="product in products" :key="product"  style="width: 18rem;">
+              <img :src="product.prodURL" class="card-img-top" :alt="product.alt">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.prodName }}</h5>
+                <p class="card-text">R {{ product.prodAmount }}</p>
+                
+                  <router-link :to="{name:'ProdDetails',params:{id:product.prodID}}" class="nav-link" >View</router-link>
+                <!-- <button class="btn-danger bt" @click="(product.prodID)">View</button>  -->
+                
+                <!-- <router-link :to="{name:'ProdDetails',params:{id:product.prodID}}"></router-link> -->
+              </div>
+          </div>
+          <!-- name: {{product.prodName}} -->
         </div>
       </div>
     </div> 
@@ -20,6 +30,15 @@
 
 <script>
 export default {
+  computed: {
+    products(){
+      return this.$store.state.products;
+    }
+    
+  },
+  mounted() {
+    this.$store.dispatch('fetchProducts');
+  },
 } 
 </script>
 
@@ -29,11 +48,15 @@ export default {
   color: #000;
   background: #f3f3f3;
 }
+
+.row* {
+  width: 500px;
+}
 .products{
   display: row;
   flex-direction: column;
   align-items: center;
-  height: 250vh;
+  height: 30vh;
   background-color: #f3f3f3;
   /* background-image: url('https://i.postimg.cc/yY9GZfpk/examplebg.jpg'); */
   background-size: cover;
@@ -46,6 +69,7 @@ export default {
     color: rgb(15, 25, 82);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 
 .product h2{
   background: rgb(65, 65, 158);
@@ -70,5 +94,13 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr 1fr 1fr 1fr));
   grid-gap: 154px;
   margin-top: 60px;
+}
+
+.bt{
+  box-sizing: border-box;
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  
 }
 </style>

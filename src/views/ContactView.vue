@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <br><br><h1>Reach Out To Us!</h1>
-      <p>If you have any questions or inquiries, 
+      <p>If you have any questions or inquiries,
         please feel free to contact us using the form below:</p>
     <div class="contact-details">
       <div><br>
@@ -12,41 +12,26 @@
           <a href="" target="_blank"><i class="bi bi-github"></i></a>
           <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
         </div><br>
-        
       </div>
     </div>
     <section class="container" id="Contact">
-      <div class="row my-5 justify-content-center">
-        <h1 class="display"></h1>
-        <div class="login-box">
-          <form action ="https://formspree.io/f/xkndbkee" target="_blank">
-            <div class="user-box">
-              <input type="text" name=" required">
-              <label>Fullname</label>
-            </div>
-            <div class="user-box">
-              <input type="password" name="required">
-              <label>Email</label>
-            </div>
-            <div class="user-box">
-              <input type="text" name=" required">
-              <label>Message</label>
-            </div>
-            <button type="submit" class="submit-button">
-              Submit
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </form>
-        </div>
-      </div>
+      <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="fullname" class="form-control" id="fullname" placeholder="Full name">
+</div>
+      <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="Email" class="form-control" id="email" placeholder="Email Address">
+</div>
+<div class="mb-3">
+  <label for="Message" class="form-label"></label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
+</div>
+<button type="submit" class="submit-button">Send</button>
     </section>
   </div>
 </template>
 <script>
-
 </script>
 <style scoped>
 * {
@@ -57,62 +42,20 @@
 h1{
   font-weight: 700;
 }
-
 .contact {
-  color: antiquewhite;
+  color: rgb(11, 1, 12);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url('https://i.postimg.cc/L586qPH6/th.jpg');
+  background-image: url('https://i.postimg.cc/FHc3PwYX/videoblocks-futuristic-blue-digital-earth-seamless-loop-global-data-network-around-planet-in-modern.png');
   background-size: cover;
   background-position: center;
 }
-
-.login-box {
-  background-color: #333;
-  border-radius: 10px;
-  padding: 40px;
-  width: 400px;
-  text-align: center;
-}
-
-.user-box {
-  position: relative;
-  margin-bottom: 30px;
-}
-
-.user-box input {
-  width: 100%;
-  padding: 10px;
-  background: none;
-  border: none;
-  outline: none;
-  color: #fff;
-  border-bottom: 1px solid #fff;
-}
-
-.user-box label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  transition: 0.5s;
-  pointer-events: none;
-}
-
-.user-box input:focus ~ label,
-.user-box input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #03a9f4;
-  font-size: 12px;
-}
-
 .submit-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #07528C;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -120,7 +63,6 @@ h1{
   position: relative;
   overflow: hidden;
 }
-
 .submit-button:hover::before {
   content: '';
   position: absolute;
@@ -132,9 +74,13 @@ h1{
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  animation: pulse 0.6s linear infinite;
+  animation: pulse 3s linear infinite;
 }
-
+#Contact.container{
+  width: 400px;
+  height: 340px;
+  border-radius: 10px;
+}
 @keyframes pulse {
   0% {
     opacity: 1;

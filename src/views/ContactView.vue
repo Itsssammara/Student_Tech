@@ -41,6 +41,10 @@
 }
 h1{
   font-weight: 700;
+  color: #051b2d;
+}
+p{
+  font-weight: 500px;
 }
 .contact {
   color: rgb(11, 1, 12);
@@ -52,6 +56,7 @@ h1{
   background-size: cover;
   background-position: center;
 }
+
 .submit-button {
   display: inline-block;
   padding: 10px 20px;
